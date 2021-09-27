@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-0udx4(sq%c&lh(efm73al+9#2t3_&7-vi=#ya$udfpzf=ra8#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['safe-oasis-73768.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['stark-mesa-20771.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -76,14 +77,11 @@ WSGI_APPLICATION = 'getit.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'getit',
-        'USER': 'getituser',
-        'PASSWORD': 'getitsenha',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://localhost/getit?user=getituser&password=getitsenha',
+        conn_max_age=600,
+        ssl_require=not DEBUG
+    )
 }
 
 
