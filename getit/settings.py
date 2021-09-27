@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+#stark-mesa-20771
+#https:/stark-mesa-20771.herokuapp.com/
+#heroku local -f Procfile.windows
+#http://localhost:5000/
+
 from pathlib import Path
 import dj_database_url
 
@@ -80,7 +85,8 @@ DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://localhost/getit?user=getituser&password=getitsenha',
         conn_max_age=600,
-        ssl_require=not DEBUG
+        #ssl_require=not DEBUG
+        ssl_require=False
     )
 }
 
