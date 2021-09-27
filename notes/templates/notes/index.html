@@ -6,8 +6,10 @@
 {% block content %}
 <body>
     <div class="appbar">
-      <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
-      <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+        <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+        <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+        <a class = "urls" href="{% url 'index' %}">Anotações</a>
+        <a class = "urls" href="{% url 'tag_list' %}">Tags</a>
     </div>
 
     <main class="container">
@@ -18,6 +20,12 @@
           type="text"
           name="titulo"
           placeholder="Título"
+        />
+        <input
+          class="autoresize"
+          type="text"
+          name="tag"
+          placeholder="Tag"
         />
         <textarea
           class="autoresize"

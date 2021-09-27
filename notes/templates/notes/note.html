@@ -27,12 +27,15 @@
         name="titulo"
       />
       <textarea
+        name = "tag">
+      {{note.tag}}</textarea>
+      <textarea
         name="detalhes"
       > {{note.content}} </textarea>
       <button type="submit" class="btn_change">Editar</button>
     </div>
   </form>
-  <script type="text/javascript" src="/templates/getit.js"></script>
+  <script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
 </li>
 
 {% endfor %}

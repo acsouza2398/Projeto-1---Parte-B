@@ -100,6 +100,18 @@ body {
 
 .subtitle{
   padding-left: 0.5rem;
+  padding-right: 1rem;
+  justify-self: left;
+}
+
+.urls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  padding-left: .5rem;
+  padding-right: .5rem;
+
 }
 
 .container{
@@ -131,6 +143,14 @@ body {
 .autoresize{
   border: none;
   padding: .5rem;
+}
+
+.class{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
 }
 
 .card {
