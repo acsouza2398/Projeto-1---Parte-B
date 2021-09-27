@@ -12,6 +12,7 @@
 
     <main class="container">
       <form class="form-card" method="post">
+        {% csrf_token %}
         <input
           class="form-card-title"
           type="text"
@@ -31,6 +32,6 @@
       </div>
     </main>
 
-    <script type="text/javascript" src="/templates/getit.js"></script>
+    <script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
   </body>
 {% endblock %}
