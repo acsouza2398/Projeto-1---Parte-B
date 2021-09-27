@@ -32,9 +32,10 @@ def edit(request, id):
     content = request.POST.get('detalhes')
     tag_info = request.POST.get('tag')
     tag, new = Tag.objects.get_or_create(tag = tag_info)
+    print(new)
     if new:
         tag.save()
-
+        
     note = Note.objects.filter(id=id)
     
     note.update(title=title, content=content, tag = tag)
